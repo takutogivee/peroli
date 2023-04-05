@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1900">
+  <title>TypeScript HTML App</title>
+  <style>
+    html, body {
+        margin: 0;
+        overflow: hidden;
+        
+    }
+  </style>
+  <!-- Pollyfill script -->
+  <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
+  <!-- Live2DCubismCore script -->
+  <script src = "../../../Core/live2dcubismcore.js"></script>
+  <!-- Build script -->
+  <script src = "./dist/bundle.js"></script>
+  <script src = "./dist/bundle.js"></script></head>
+<body>
+  <div id="live2d">
+    <canvas id="glcanvas" width="1" height="1" style="position:absolute;top:0;left:0;"></canvas>
+  </div>
+
+  <script>
+    const live2dElement = document.getElementById('live2d');
+    live2dElement.style.backgroundImage = "url('Resources/back_class_normal.png')";
+    live2dElement.style.backgroundRepeat = "no-repeat";
+    live2dElement.style.backgroundPosition = "center";
+    live2dElement.style.backgroundAttachment = "fixed";
+    live2dElement.style.backgroundSize = "cover";
+  </script>
+</body>
+</html>

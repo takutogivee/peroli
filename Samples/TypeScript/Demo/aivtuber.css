@@ -1,0 +1,95 @@
+html,
+body {
+    background-image: url('background.png');
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    color: #FFFFFF;
+    height: 100vh;
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "BIZ UDPGothic",
+    Meiryo,
+    sans-serif;
+}
+
+#charaImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+div.aiResponseBox {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 40%;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#userComment {
+    text-align: center;
+    font-size: 0px;
+    margin: 2rem;
+    font-weight: bold;
+}
+
+.ai-response {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5em;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    color: #fff;
+    letter-spacing: -0.05em;
+    border-radius: 25px;
+    background-image: linear-gradient(90deg, rgba(16, 190, 252, 1) 4%, rgba(129, 188, 243, 1) 13%, rgba(230, 177, 225, 1) 28%, rgba(250, 127, 229, 1) 49%, rgba(255, 125, 125, 1) 67%, rgba(247, 152, 102, 1) 78%, rgba(255, 212, 189, 1) 95%);
+}
+
+div.bottomBox {
+    position: absolute;
+    bottom: 0%;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #ff6a00;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

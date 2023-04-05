@@ -1,0 +1,28 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Givee Vtuber_original_0314.moc3",
+		"Textures": [
+			"Givee Vtuber_original_0314.4096/texture_00.png"
+		],
+		"Physics": "Givee Vtuber_original_0314.physics3.json",
+		"DisplayInfo": "Givee Vtuber_original_0314.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthForm",
+				"ParamMouthOpenY"
+			]
+		}
+	]
+}
