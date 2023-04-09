@@ -811,7 +811,7 @@ export class LAppModel extends CubismUserModel {
     if (this._state == LoadStep.CompleteSetup) {
       matrix.multiplyByMatrix(this._modelMatrix);
     // キャラクターを横に移動する場合
-      matrix.translateRelative(0.2, 0);
+      matrix.translateRelative(0, 0);
       //配置を変える
       matrix.translateRelative(0, -0.4)
       this.getRenderer().setMvpMatrix(matrix);

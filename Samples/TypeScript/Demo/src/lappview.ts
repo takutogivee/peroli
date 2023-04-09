@@ -136,7 +136,7 @@ export class LAppView {
       const x: number = width * 0.5;
       const y: number = height * 0.5;
    // 背景画像の幅や高さを変更をする
-      const fwidth = textureInfo.width * 3.5;
+      const fwidth = textureInfo.width * 4.5;
       const fheight = height * 1.0;
       this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
     };

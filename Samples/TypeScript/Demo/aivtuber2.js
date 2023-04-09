@@ -10,7 +10,7 @@ const YOUTUBE_VIDEO_ID = 'N0QZdlTCTVY';
 
 
 // TODO: YouTube Data APIを利用可能なAPIKEY
-const YOUTUBE_DATA_API_KEY = '-';
+const YOUTUBE_DATA_API_KEY = 'AIzaSyC0xHikM8jLIBeeCKKpLnFnp4aUzCqzuS4';
 
 // コメントの取得インターバル (ms)
 const INTERVAL_MILL_SECONDS_RETRIEVING_COMMENTS = 10000;
@@ -94,21 +94,16 @@ async function getMeboResponse(utterance, username, uid, apikey, agentId) {
 }
 
 const playVoice = async (inputText) => {
-    if (typeof audio !== 'undefined') {
-        audio.pause();
-        audio.currentTime = 0;
-    }
-    
-    const ttsQuery = await fetch(VOICE_VOX_API_URL + '/audio_query?speaker=' + VOICEVOX_SPEAKER_ID + '&text=' + encodeURIComponent(inputText), {
+    audio.pause();
+    audio.currentTime = 0;
+    const ttsQuery = await fetch(VOICE_VOX_API_URL + '/audio_query?speaker=' + VOICEVOX_SPEAKER_ID + '&text=' + encodeURI(inputText), {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    
-    if (!ttsQuery.ok) return;
+    if (!ttsQuery) return;
     const queryJson = await ttsQuery.json();
-    
     const response = await fetch(VOICE_VOX_API_URL + '/synthesis?speaker=' + VOICEVOX_SPEAKER_ID + '&speedScale=1.5&pitchScale=2', {
         method: 'post',
         headers: {
@@ -116,19 +111,14 @@ const playVoice = async (inputText) => {
         },
         body: JSON.stringify(queryJson)
     })
-    
-    if (!response.ok) return;
+    if (!response) return;
     const blob = await response.blob();
-    const audioSourceURL = window.URL || window.webkitURL;
+    const audioSourceURL = window.URL || window.webkitURL
     audio = new Audio(audioSourceURL.createObjectURL(blob));
-    
     audio.onended = function () {
         setTimeout(handleNewLiveCommentIfNeeded, 1000);
     }
-    
-    audio.play().catch((error) => {
-        console.error('Error playing audio:', error);
-    });
+    audio.play();
 }
 
 const visibleAIResponse = () => {
